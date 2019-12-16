@@ -1,0 +1,155 @@
+$screen-mobile-s-width: 320px;
+$screen-mobile-m-width: 375px;
+$screen-mobile-l-width: 425px;
+
+$screen-tablet-s-width: 520px;
+$screen-tablet-m-width: 640px;
+$screen-tablet-l-width: 768px;
+
+$screen-laptop-s-width: 1024px;
+$screen-laptop-m-width: 1280px;
+$screen-laptop-l-width: 1366px;
+
+$screen-desktop-s-width: 1440px;
+$screen-desktop-m-width: 1680px;
+$screen-desktop-l-width: 1920px;
+
+$gutter-mobile-s-width: 4px;
+$gutter-mobile-m-width: 6px;
+$gutter-mobile-l-width: 8px;
+
+$gutter-tablet-s-width: 10px;
+$gutter-tablet-m-width: 12px;
+$gutter-tablet-l-width: 14px;
+
+$gutter-laptop-s-width: 16px;
+$gutter-laptop-m-width: 18px;
+$gutter-laptop-l-width: 20px;
+
+$gutter-desktop-s-width: 22px;
+$gutter-desktop-m-width: 24px;
+$gutter-desktop-l-width: 26px;
+
+@mixin scm-s {
+  @media (min-width: #{$screen-mobile-s-width}) {
+    @content;
+  }
+}
+
+@mixin scm-m {
+  @media (min-width: #{$screen-mobile-m-width}) {
+    @content;
+  }
+}
+
+@mixin scm-l {
+  @media (min-width: #{$screen-mobile-l-width}) {
+    @content;
+  }
+}
+
+@mixin sct-s {
+  @media (min-width: #{$screen-tablet-s-width}) {
+    @content;
+  }
+}
+
+@mixin sct-m {
+  @media (min-width: #{$screen-tablet-m-width}) {
+    @content;
+  }
+}
+
+@mixin sct-l {
+  @media (min-width: #{$screen-tablet-l-width}) {
+    @content;
+  }
+}
+
+@mixin scl-s {
+  @media (min-width: #{$screen-laptop-s-width}) {
+    @content;
+  }
+}
+
+@mixin scl-m {
+  @media (min-width: #{$screen-laptop-m-width}) {
+    @content;
+  }
+}
+
+@mixin scl-l {
+  @media (min-width: #{$screen-laptop-l-width}) {
+    @content;
+  }
+}
+
+@mixin scd-s {
+  @media (min-width: #{$screen-desktop-s-width}) {
+    @content;
+  }
+}
+
+@mixin scd-m {
+  @media (min-width: #{$screen-desktop-m-width}) {
+    @content;
+  }
+}
+
+@mixin scd-l {
+  @media (min-width: #{$screen-desktop-l-width}) {
+    @content;
+  }
+}
+
+.container {
+  padding: 0 10px;
+  @include scm-s {
+    padding: 0 10px;
+    max-width: calc(100% - #{$gutter-mobile-s-width});
+  }
+  @include scm-m {
+    padding: 0 10px;
+    max-width: calc(100% - #{$gutter-mobile-m-width});
+  }
+  @include scm-l {
+    padding: 0 10px;
+    max-width: calc(100% - #{$gutter-mobile-l-width});
+  }
+  @include sct-s {
+    padding: 0 14px;
+    max-width: calc(100% - #{$gutter-tablet-s-width});
+  }
+  @include sct-m {
+    padding: 0 14px;
+    max-width: calc(100% - #{$gutter-tablet-m-width});
+  }
+  @include sct-l {
+    padding: 0 14px;
+    max-width: calc(100% - #{$gutter-tablet-l-width});
+  }
+  @include scl-s {
+    padding: 0 18px;
+    max-width: calc(100% - #{$gutter-laptop-s-width});
+  }
+  @include scl-m {
+    padding: 0 18px;
+    max-width: calc(100% - #{$gutter-laptop-m-width});
+  }
+  @include scl-l {
+    padding: 0 18px;
+    max-width: calc(100% - #{$gutter-laptop-l-width});
+  }
+  @include scd-s {
+    padding: 0 24px;
+    max-width: calc(100% - #{$gutter-desktop-s-width});
+  }
+  @include scd-m {
+    padding: 0 24px;
+    max-width: calc(100% - #{$gutter-desktop-m-width});
+  }
+  @include scd-l {
+    padding: 0 24px;
+    max-width: calc(100% - #{$gutter-desktop-l-width});
+  }
+}

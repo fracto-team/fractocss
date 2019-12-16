@@ -1,0 +1,18 @@
+{
+  "name": "fractocss",
+  "version": "0.0.1",
+  "description": "Fracto CSS Utilities",
+  "repository": "https://github.com/fracto-team/fractocss",
+  "author": "Fracto",
+  "license": "MIT",
+  "devDependencies": {
+    "csso-cli": "^3.0.0",
+    "node-sass": "^4.13.0"
+  },
+  "scripts": {
+    "build-sass": "node-sass src/styles/fractocss.scss dist/css/fractocss.css",
+    "build-sass:watch": "npm run build-sass && node-sass src/styles/fractocss.scss dist/css/fractocss.css --include-path src/styles -wo",
+    "minify-css": "csso dist/css/fractocss.css --output dist/css/fractocss.min.css",
+    "build": "npm run build-sass && npm run minify-css"
+  }
+}

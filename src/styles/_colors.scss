@@ -1,0 +1,47 @@
+$blue: rgb(0, 122, 255);
+$green: rgb(52, 199, 89);
+$indigo: rgb(88, 86, 214);
+$orange: rgb(255, 149, 0);
+$pink: rgb(255, 55, 95);
+$purple: rgb(175, 82, 222);
+$red: rgb(255, 59, 48);
+$teal: rgb(90, 200, 250);
+$yellow: rgb(255, 204, 0);
+$gray: rgb(142, 142, 147);
+$light: rgb(242, 242, 247);
+$dark: rgb(28, 28, 30);
+
+$default-border-color: $gray !default;
+$default-border-focus-color: $teal !default;
+
+$system-colors: "blue" $blue,
+"green" $green,
+"indigo" $indigo,
+"orange" $orange,
+"pink" $pink,
+"purple" $purple,
+"red" $red,
+"teal" $teal,
+"yellow" $yellow,
+"gray" $gray,
+"light" $light,
+"dark" $dark;
+
+@each $item in $system-colors {
+  $color: nth($item, 2);
+  $key: nth($item, 1);
+  $text-color: $light;
+  @if (lightness($color) > 50) {
+    $text-color: $dark;
+  }
+  .bg-#{$key} {
+    background-color: $color;
+    color: $text-color;
+  }
+  .text-#{$key} {
+    color: $color;
+  }
+  .border-color-#{$key} {
+    color: $color;
+  }
+}
